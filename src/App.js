@@ -3,15 +3,18 @@ import React from 'react';
 
 class App extends React.Component {
   render(){
-    return (
-        <div>
-          <h1>Hello Word</h1>
-          <b>Bold</b>
-        </div>
-    )
+    let txt = this.props.txt
+    return <h1>{txt}</h1>
   }
 }
 
-//const App = () => <h1>Hello startless</h1>
+App.propTypes = {
+  txt: React.propTypes.string,
+  cat: React.propTypes.number.isRequired
+}
+
+App.defaultProps = {
+  txt: "this is the default txt"
+}
 
 export default App
